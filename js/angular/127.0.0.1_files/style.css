@@ -1,0 +1,22 @@
+.corpo{
+    height: 100%;
+    width: 100%;
+}
+
+.topo{
+
+    width: 100%;
+
+}
+.central{
+    width: 100%;
+
+}
+.site-sidenav, .site-sidenav.md-locked-open-add-active, .site-sidenav.md-locked-open{
+
+  width: 272px;
+  min-width: 272px;
+  max-width: 272px;
+  box-shadow: 1px 8px 16px #333;
+
+}

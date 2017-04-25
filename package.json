@@ -1,0 +1,30 @@
+{
+  "name": "projeto-zup",
+  "version": "1.0.0",
+  "description": "Projeto contratação zup",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoJpa/projeto-zup.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "João Paulo Amaral (joaopauloamaral21@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoJpa/projeto-zup/issues"
+  },
+  "homepage": "https://github.com/JoaoJpa/projeto-zup#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
+  },
+  "dependencies": {
+    "gulp-open": "^2.0.0"
+  }
+}

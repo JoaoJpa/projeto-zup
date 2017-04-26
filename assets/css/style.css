@@ -115,13 +115,13 @@ input::-webkit-input-placeholder {
 }
 .menu-filtro{
   background-color: #fff;
-  z-index: 5;
+  z-index: 1;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
 }
 .img-grid:hover{
   transform: scale(1.2,1.2);
   transition: 0.8s;
-  z-index: 6;
+  z-index: 3;
 
 }
 .img-grid:not(:hover){
@@ -135,7 +135,7 @@ input::-webkit-input-placeholder {
   margin-left: 30px;
   margin-top: 8px;
   min-width: 40px;
-  z-index: 5;
+  z-index: 1;
 }
 .btn-esconder:hover{
   background-color: #ccc !important;
@@ -146,4 +146,12 @@ ul {
 }
 md-checkbox.md-default-theme.md-checked ._md-icon, md-checkbox.md-checked ._md-icon {
   background-color: #ccc !important
+}
+.grid md-grid-tile-footer{
+  z-index: 1;
+  height: 80px;
+}
+.grid h4, .grid h5{
+  margin: 0;
+  margin-bottom: 5px
 }

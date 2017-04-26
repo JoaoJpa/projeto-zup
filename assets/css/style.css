@@ -1,0 +1,149 @@
+body {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height:100%;
+  width: 100%;
+  background-color:#fff;
+  margin: 0;
+}
+
+input::-webkit-input-placeholder {
+  color: #a1a1a1;
+  font-weight: bold !important;
+  font-size: 12px;
+}
+
+.corpo-login{
+    height: 100%;
+    width: 100%;
+    background-color: #442044;
+}
+.toolbar-login{
+  min-height: 40px;
+  max-height: 40px;
+}
+.toolbar-login h6{
+  margin: 10px 0px 0px 20px;
+}
+.toolbar-login md-icon{
+  margin-top: 10px;
+  margin-right: 40px;
+  font-size: 20px
+}
+.toolbar-login div{
+  height: 40px
+}
+
+.card-login{
+  background-color: #f2f2f2 !important;
+}
+.card-login md-card-content{
+  padding-top: 0px
+}
+.input-login{
+  height: 36px !important;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.input-login .md-input{
+  position: absolute;
+  height: 36px !important;
+  background-color: #f0eef1 ;
+  border: 1px solid #e3e3e3 !important;
+  padding-left: 20px;
+  max-width: 100%;
+}
+.input-login.md-input-invalid .md-input{
+  border: 1px solid red !important;
+}
+.lost-pass{
+  margin-left: 20px;
+  font-size: 12px;
+  color: #a1a1a1;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+.btn-login{
+  background-color: #6d496d !important;
+  text-transform: none;
+  color:#fff;
+  margin:0;
+  font-size: 12px;
+  width: 120px;
+  height: 30px
+}
+.div-btn-lost-login{
+  margin-top: 20px;
+}
+.icons-login{
+  margin-top: 2px !important;
+  margin-right: 10px !important;
+  color: #a1a1a1;
+  font-size: 18px
+}
+.invalid-msg{
+  color: red;
+  font-size: 10px
+}
+.container-lista{
+  height: 100%;
+  overflow: hidden;
+}
+.container-lista md-toolbar{
+    min-height: 45px !important;
+    max-height: 45px !important;
+}
+.container-lista md-content{
+  height: 100%;
+}
+.grid-lista{
+  padding: 20px 40px;
+  background: #fbf2fd;
+
+}
+.pesquisa-grid{
+  height: 36px !important;
+}
+
+.pesquisa-grid .md-input{
+  border: 1px solid #e3e3e3 !important;
+  border-radius: 5px;
+  background: #fff;
+  padding-left: 20px
+}
+.menu-filtro{
+  background-color: #fff;
+  z-index: 5;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+.img-grid:hover{
+  transform: scale(1.2,1.2);
+  transition: 0.8s;
+  z-index: 6;
+
+}
+.img-grid:not(:hover){
+  transform: scale(1,1);
+  transition: 0.8s;
+}
+.btn-esconder{
+  margin:0;
+  background-color:#ccc;
+  position: absolute;
+  margin-left: 30px;
+  margin-top: 8px;
+  min-width: 40px;
+  z-index: 5;
+}
+.btn-esconder:hover{
+  background-color: #ccc !important;
+}
+ul {
+  width: 100%;
+  list-style-type: none;
+}
+md-checkbox.md-default-theme.md-checked ._md-icon, md-checkbox.md-checked ._md-icon {
+  background-color: #ccc !important
+}

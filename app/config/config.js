@@ -1,21 +1,14 @@
-app.config(function($stateProvider, $urlRouterProvider,  $mdThemingProvider) {
-
+app.config(function($stateProvider, $urlRouterProvider,  $mdThemingProvider, $rootScopeProvider) {
   $urlRouterProvider.otherwise("login");
-
   $urlRouterProvider.otherwise(function ($injector, $location) {
     return '/login';
   });
   //
   // Now set up the states
   $stateProvider
-
   .state('login', {
      url:"/login",
     templateUrl:"views/login/login.html",
     controller: "Login"
     })
-
-
-
-
 });

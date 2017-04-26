@@ -1,4 +1,6 @@
 app.controller('Lista', function($scope,$mdSidenav, $state, $mdDialog, $rootScope, $http){
+
+
   $scope.lista = [];
   $scope.esconderMenu = esconderMenu;
   $scope.buscaAdd = buscaAdd;
@@ -99,6 +101,11 @@ app.controller('Lista', function($scope,$mdSidenav, $state, $mdDialog, $rootScop
       $scope.flexMenu = 20;
     }
   }
-
+  var container = document.getElementById('menu-filtro');
+  Ps.initialize(container);
+  Ps.update(container);
+  var container = document.getElementById('grid-lista');
+  Ps.initialize(container);
+  Ps.update(container);
 
 })

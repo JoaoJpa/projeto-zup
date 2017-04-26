@@ -3,7 +3,8 @@
       <h5>Lista-itens</h5>
     </md-toolbar>
     <md-content layout=row flex=100 class="container-grid">
-      <md-content class="menu-filtro" flex={{flexMenu}} layout-wrap>
+      <md-content id="menu-filtro"class="menu-filtro" flex={{flexMenu}} layout-wrap>
+
         <div layout="row" flex layout-wrap  style="position:relative; height:100%;margin-top:10px">
           <div layout=row flex=100 style="max-height:50px">
             <md-select ng-model="tipo" placeholder="Tipos" class="md-no-underline md-padding" style="margin:0;max-height:50px" flex>
@@ -27,12 +28,10 @@
           </ul>
         </div>
       </md-content>
-      <md-content class="grid-lista" flex>
-        <div layout="row" flex=100 layout-align="start center" style="height:40px">
+      <md-content id="grid-lista" class="grid-lista" flex>
           <md-button class="btn-esconder"ng-click="esconderMenu()">
             <md-icon>{{iconEsconder}}</md-icon>
           </md-button>
-        </div>
         <div layout=row flex=100 layout-align="center center">
           <md-input-container md-no-float class="md-block pesquisa-grid" flex=50 flex-xs=100>
               <md-icon>search</md-icon>

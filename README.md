@@ -3,8 +3,10 @@
   git clone https://github.com/JoaoJpa/projeto-zup.git
 
 # Install npm modules e start
-
-  npm install && npm start
+  
+  Vá ate a pasta ao qual clonou e digite o comando:
+  
+#####  npm install && npm start
 
 # O projeto
 

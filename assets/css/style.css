@@ -45,6 +45,10 @@ input::-webkit-input-placeholder {
   height: 40px
 }
 
+.div-msg{
+  margin-top: 5px;
+}
+
 .card-login{
   background-color: #f2f2f2 !important;
 }

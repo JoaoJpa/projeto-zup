@@ -24,7 +24,7 @@
            </md-input-container>
 
            <!-- caso tentar logar sem usuario preenchido mostra a msg  -->
-           <div ng-messages="formLogin.username.$error" ng-show="invalidUser">
+           <div class="div-msg"ng-messages="formLogin.username.$error" ng-show="invalidUser">
              <div ng-message="required" class="invalid-msg">Username is required.</div>
            </div>
 
@@ -34,7 +34,7 @@
            </md-input-container>
            <!-- caso tentar logar sem usuario preenchido mostra a msg  -->
 
-           <div ng-messages="formLogin.pass.$error" ng-show="invalidPass">
+           <div class="div-msg"ng-messages="formLogin.pass.$error" ng-show="invalidPass">
              <div ng-message="required" class="invalid-msg">Password is required.</div>
            </div>
           </form>

@@ -133,6 +133,9 @@ input::-webkit-input-placeholder {
 .toolbar-grid h6{
   text-align: right;
   margin-right: 10px;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
 }
 
 .container-lista md-toolbar{

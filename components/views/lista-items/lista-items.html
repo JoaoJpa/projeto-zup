@@ -34,7 +34,7 @@
           <!-- lista gerada para categoria e titulo -->
           <ul  ng-if="tipo == 'titulo'">
             <li ng-repeat="item in lista">
-              <md-checkbox ng-model="checkTitulo[$index]" ng-click="buscaAdd(item.titulo,$index, 'titulo')" >
+              <md-checkbox ng-model="checkTitulo[$index]" ng-click="buscarItens(item.titulo,$index, 'titulo')" >
                   {{item.titulo}}
               </md-checkbox>
             </li>
@@ -42,7 +42,7 @@
 
           <ul ng-if="tipo == 'categoria'">
             <li ng-repeat="categoria in listaCategoria">
-              <md-checkbox ng-model="checkCategoria[$index]" ng-click="buscaAdd(categoria.categoria,$index, 'categoria')" >
+              <md-checkbox ng-model="checkCategoria[$index]" ng-click="buscarItens(categoria.categoria,$index, 'categoria')" >
                   {{categoria.categoria}}
               </md-checkbox>
             </li>

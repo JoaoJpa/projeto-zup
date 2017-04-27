@@ -14,7 +14,7 @@ app.controller('Lista', function($scope,$mdSidenav, $state, $mdDialog, $http){
   // function sendo colocadas em escopo
   $scope.logout = logout;
   $scope.esconderMenu = esconderMenu;
-  $scope.buscaAdd = buscaAdd;
+  $scope.buscarItens = buscarItens;
   $scope.mudarFiltro = mudarFiltro;
 
   // variaveis inicializadas
@@ -75,7 +75,7 @@ app.controller('Lista', function($scope,$mdSidenav, $state, $mdDialog, $http){
 
   // função que filtra por titulo e categoria por meio dos md-checkbox.
   // essa função recebe que vai se pesquisar e de que tipo é o que se pesquisa no objeto da lista
-  function buscaAdd(item, index, tipo) {
+  function buscarItens(item, index, tipo) {
         $scope.listaRemove = [];
         $scope.buscar = item;
         $scope.tipo = tipo;

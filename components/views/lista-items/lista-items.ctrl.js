@@ -1,22 +1,46 @@
 app.controller('Lista', function($scope,$mdSidenav, $state, $mdDialog, $rootScope, $http){
 
+  console.log($rootScope.user);
 
+  var grid = document.getElementById('grid-lista');
+  Ps.initialize(grid);
+  Ps.update(grid);
+  var filtro = document.getElementById('menu-filtro');
+  Ps.initialize(filtro);
+  Ps.update(filtro);
+
+  $scope.user = $rootScope.user;
   $scope.lista = [];
+
+  $scope.logout = logout;
   $scope.esconderMenu = esconderMenu;
   $scope.buscaAdd = buscaAdd;
   $scope.buscarItens = buscarItens;
+  $scope.mudarFiltro = mudarFiltro;
   $scope.iconEsconder = 'keyboard_arrow_left';
+  $scope.hideShow = 'hide';
+
   $scope.titulos = [];
-  $scope.filtroTitulo = [];
+  $scope.filtroTipos = [];
   $scope.check ={};
+  $scope.checkCategoria = {};
   $scope.listaIndex = [];
   $scope.tipo = 'titulo';
   $scope.listaCategoria = [];
   $scope.flexMenu = 20;
+  $scope.flexMenuLg = 15;
+  $scope.flexMenuSm = 25;
+  $scope.flexMenuXs = 45;
+
 
 
   if(window.innerWidth < 600){
+    $scope.flexMenuXs = 0;
     $scope.flexMenu = 0;
+
+    $scope.iconEsconder = 'keyboard_arrow_right';
+    $scope.hideShow = 'show';
+
   }
 
   $http.get('dados/dados.json').then(function(resp) {
@@ -41,22 +65,24 @@ app.controller('Lista', function($scope,$mdSidenav, $state, $mdDialog, $rootScop
       $scope.listaCategoria = $scope.auxs;
 
   })
-  function buscaAdd(titulo, index) {
+  function buscaAdd(item, index, tipo) {
         $scope.listaRemove = [];
-        $scope.titulo = titulo;
+        $scope.buscar = item;
+        $scope.tipo = tipo;
         $scope.valida = false;
 
-        if($scope.check[index] == true){
+
+        if($scope.check[index] == true || $scope.checkCategoria[index] == true){
           angular.forEach($scope.listaItem, function(value, key) {
-              if(value.titulo != $scope.titulo){
+            if(value[$scope.tipo] != $scope.buscar){
                   $scope.listaRemove.push(value)
               }
           })
           $scope.listaItem = $scope.listaRemove;
-          $scope.filtroTitulo = $scope.listaItem;
+          $scope.filtroTipos = $scope.listaItem;
 
         }else{
-        angular.forEach($scope.filtroTitulo, function(value, key) {
+        angular.forEach($scope.filtroTipos, function(value, key) {
             if(value.id == $scope.id){
               $scope.valida = true;
             }
@@ -64,11 +90,11 @@ app.controller('Lista', function($scope,$mdSidenav, $state, $mdDialog, $rootScop
 
         if($scope.valida == false){
           angular.forEach($scope.lista, function(value, key) {
-              if(value.titulo == $scope.titulo){
-                $scope.filtroTitulo.push(value);
+              if(value[$scope.tipo] == $scope.buscar){
+                $scope.filtroTipos.push(value);
               }
           })
-          $scope.listaItem = $scope.filtroTitulo;
+          $scope.listaItem = $scope.filtroTipos;
         }
       }
       if($scope.listaItem.length==0){
@@ -78,34 +104,52 @@ app.controller('Lista', function($scope,$mdSidenav, $state, $mdDialog, $rootScop
 
   }
   function buscarItens() {
-    console.log($scope.filtroTitulo);
-    $scope.listaItem = $scope.filtroTitulo;
+    $scope.listaItem = $scope.filtroTipos;
   }
   function esconderMenu(){
 
-    if($scope.flexMenu != 0){
+    if($scope.flexMenu != 0 ){
       $scope.flexMenu = 0;
+      $scope.flexMenuLg = 0;
+      $scope.flexMenuSm = 0;
+      $scope.flexMenuXs = 0;
       $scope.iconEsconder = 'keyboard_arrow_right';
+      $scope.hideShow = 'show';
+
     }else{
       $scope.flexMenu = 20;
-      if (window.innerWidth < 600) {
-        $scope.flexMenu = 40;
-      }
+      $scope.flexMenuLg = 15;
+      $scope.flexMenuSm = 25;
+      $scope.flexMenuXs = 45;
       $scope.iconEsconder = 'keyboard_arrow_left';
+      $scope.hideShow = 'hide';
+
     }
   }
+  function mudarFiltro() {
+    $scope.filtroTipos = [];
+    $scope.listaItem = $scope.lista;
+    angular.forEach($scope.check, function(value, key) {
+            $scope.check[key] = false;
+    });
+    angular.forEach($scope.checkCategoria, function(value, key) {
+            $scope.checkCategoria[key] = false;
+    });
+  }
+  function logout() {
+    $rootScope.user = null;
+    $state.go('login')
+  }
+
   window.onresize = function() {
     if (window.innerWidth < 600) {
       $scope.flexMenu = 0;
-    }else{
-      $scope.flexMenu = 20;
+      $scope.flexMenuXs = 0;
+      $scope.iconEsconder = 'keyboard_arrow_right';
+      $scope.hideShow = 'show';
     }
   }
-  var container = document.getElementById('menu-filtro');
-  Ps.initialize(container);
-  Ps.update(container);
-  var container = document.getElementById('grid-lista');
-  Ps.initialize(container);
-  Ps.update(container);
+
+
 
 })

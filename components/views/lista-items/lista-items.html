@@ -1,48 +1,61 @@
 <md-content layout=row layout-wrap class="container-lista">
-    <md-toolbar flex=100>
-      <h5>Lista-itens</h5>
+    <md-toolbar flex=100 class="toolbar-grid">
+      <div layout=row flex layout-align="center center">
+        <h4 flex>Lista-itens</h4>
+        <div layout=row flex layout-align="center center">
+          <h6 flex>{{user}}</h5>
+          <md-icon flex=10 ng-click="logout()">
+            <md-tooltip>logout</md-tooltip>
+
+            exit_to_app</md-icon>
+        </div>
+
+      </div>
     </md-toolbar>
     <md-content layout=row flex=100 class="container-grid">
-      <md-content id="menu-filtro"class="menu-filtro" flex={{flexMenu}} layout-wrap>
-
+      <md-content id="menu-filtro"class="menu-filtro" flex={{flexMenu}} flex-xs={{flexMenuXs}} flex-sm={{flexMenuSm}} flex-gt-md={{flexMenuLg}} layout-wrap>
         <div layout="row" flex layout-wrap  style="position:relative; height:100%;margin-top:10px">
-          <div layout=row flex=100 style="max-height:50px">
-            <md-select ng-model="tipo" placeholder="Tipos" class="md-no-underline md-padding" style="margin:0;max-height:50px" flex>
+          <div layout=row flex=100 style="max-height:50px" layout-wrap>
+            <h5 flex=100 style="margin:0px; margin-left:10px">Fitrar por:</h5>
+            <md-select ng-model="tipo" placeholder="Tipos" class="md-no-underline md-padding"
+            style="margin:0;max-height:50px" ng-change="mudarFiltro()"flex>
               <md-option value="titulo">Titulo</md-option>
               <md-option value="categoria">Categoria</md-option>
             </md-select>
           </div>
-          <ul style="position:absolute; top:55px" ng-if="tipo == 'titulo'">
-            <li ng-repeat="item in lista">
-              <md-checkbox ng-model="check[$index]" ng-click="buscaAdd(item.titulo,$index)" >
-                  {{item.titulo}}
-              </md-checkbox>
-            </li>
-          </ul>
-          <ul style="position:absolute; top:55px" ng-if="tipo == 'categoria'">
-            <li ng-repeat="categoria in listaCategoria">
-              <md-checkbox ng-model="check[$index]" ng-click="buscaAdd(item.titulo,$index)" >
-                  {{categoria.categoria}}
-              </md-checkbox>
-            </li>
-          </ul>
+            <ul  ng-if="tipo == 'titulo'">
+              <li ng-repeat="item in lista">
+                <md-checkbox ng-model="check[$index]" ng-click="buscaAdd(item.titulo,$index, 'titulo')" >
+                    {{item.titulo}}
+                </md-checkbox>
+              </li>
+            </ul>
+
+            <ul ng-if="tipo == 'categoria'">
+              <li ng-repeat="categoria in listaCategoria">
+                <md-checkbox ng-model="checkCategoria[$index]" ng-click="buscaAdd(categoria.categoria,$index, 'categoria')" >
+                    {{categoria.categoria}}
+                </md-checkbox>
+              </li>
+            </ul>
+
         </div>
       </md-content>
       <md-content id="grid-lista" class="grid-lista" flex>
           <md-button class="btn-esconder"ng-click="esconderMenu()">
-            <md-icon>{{iconEsconder}}</md-icon>
+            <md-icon>
+              <md-tooltip>{{hideShow}}</md-tooltip>
+              {{iconEsconder}}</md-icon>
           </md-button>
-        <div layout=row flex=100 layout-align="center center">
-          <md-input-container md-no-float class="md-block pesquisa-grid" flex=50 flex-xs=100>
-              <md-icon>search</md-icon>
+        <div layout=row class="div-pesquisa"flex=100  layout-align="center center">
+          <md-input-container md-no-float class="md-block pesquisa-grid" flex=70 flex-xs=100>
+              <md-icon >search</md-icon>
               <input type="text" name="username" ng-model="pesquisar" placeholder="Pesquisar item ...">
             </md-input-container>
         </div>
-
-
         <md-grid-list class="grid"
           md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
-          md-row-height-gt-md="1:1" md-row-height="4:3"
+          md-row-height-gt-md="1:1" md-row-height="3:2"
           md-gutter="24px" md-gutter-gt-sm="4px" >
 
           <md-grid-tile ng-repeat="item in listaItem | filter: pesquisar track by $index"

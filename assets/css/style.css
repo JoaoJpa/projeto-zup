@@ -13,6 +13,9 @@ input::-webkit-input-placeholder {
   font-weight: bold !important;
   font-size: 12px;
 }
+.pesquisa-grid input::-webkit-input-placeholder{
+  font-size: 14px;
+}
 
 .corpo-login{
     height: 100%;
@@ -29,7 +32,8 @@ input::-webkit-input-placeholder {
 .toolbar-login md-icon{
   margin-top: 10px;
   margin-right: 40px;
-  font-size: 20px
+  font-size: 20px;
+  cursor:pointer;
 }
 .toolbar-login div{
   height: 40px
@@ -91,6 +95,20 @@ input::-webkit-input-placeholder {
   height: 100%;
   overflow: hidden;
 }
+.toolbar-grid h4{
+  margin: 0px;
+  margin-left: 30px;
+  text-align: start;
+}
+.toolbar-grid h6, .toolbar-grid md-icon{
+  margin: 0px;
+  cursor: pointer;
+  outline: inherit;
+}
+.toolbar-grid h6{
+  text-align: right;
+  margin-right: 10px;
+}
 .container-lista md-toolbar{
     min-height: 45px !important;
     max-height: 45px !important;
@@ -99,24 +117,31 @@ input::-webkit-input-placeholder {
   height: 100%;
 }
 .grid-lista{
-  padding: 20px 40px 100px 40px;
+  height: 100%;
+  padding: 0px 40px 100px 40px;
   background: #fbf2fd;
-
 }
+
 .pesquisa-grid{
-  height: 36px !important;
+  height: 40px !important;
 }
 
 .pesquisa-grid .md-input{
   border: 1px solid #e3e3e3 !important;
   border-radius: 5px;
   background: #fff;
-  padding-left: 20px
+  padding-left: 40px;
+  height: 100%;
+}
+.pesquisa-grid md-icon{
+  position: absolute;
+  left: 45px;
 }
 .menu-filtro{
   background-color: #fff;
   z-index: 1;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  font-size: 12px;
 }
 .img-grid:hover{
   transform: scale(1.2,1.2);
@@ -133,8 +158,14 @@ input::-webkit-input-placeholder {
   background-color: #ccc;
   position: relative;
   min-width: 40px;
-  bottom: 10px;
+  top: 10px;
   right: 43px;
+}
+.div-pesquisa {
+  margin-bottom: 20px
+}
+.div-pesquisa md-input-container{
+  margin-top: 0px;
 }
 .btn-esconder:hover{
   background-color: #ccc !important;
@@ -144,7 +175,9 @@ ul {
   list-style-type: none;
 }
 .menu-filtro ul{
-  padding-bottom: 100px
+  padding-bottom: 100px;
+  position: absolute;
+  top: 55px
 }
 md-checkbox.md-default-theme.md-checked ._md-icon, md-checkbox.md-checked ._md-icon {
   background-color: #ccc !important
@@ -156,4 +189,19 @@ md-checkbox.md-default-theme.md-checked ._md-icon, md-checkbox.md-checked ._md-i
 .grid h4, .grid h5{
   margin: 0;
   margin-bottom: 5px
+}
+.menu-filtro md-select{
+  padding: 10px
+}
+.menu-filtro md-select md-select-value{
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.menu-filtro md-select md-select-value span{
+  padding-left: 20px;
+  padding-bottom: 5px;
+  color: #a1a1a1;
+  font-weight: bold;
 }

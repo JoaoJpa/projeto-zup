@@ -3,7 +3,9 @@
     <md-toolbar class="toolbar-login">
     <div layout="row">
       <h6 flex=90>Login Form</h6>
-      <md-icon flex>close</md-icon>
+      <md-icon ng-click="limpar()"flex>
+        <md-tooltip>limpar form</md-tooltip>
+        close</md-icon>
     </div>
 
     </md-toolbar>
@@ -29,6 +31,7 @@
         </div>
         <div class="row div-btn-lost-login">
           <md-button class="btn-login" ng-click="login()">
+            <md-tooltip>sing in</md-tooltip>
             Sing In
           </md-button>
           <span class="lost-pass">Lost Your Password ?</span>

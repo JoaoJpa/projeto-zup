@@ -1,11 +1,10 @@
 var gulp = require('gulp');
 var gulpif = require('gulp-if');
-var concat = require('gulp-concat');
 var webserver = require('gulp-webserver');
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-cssmin');
-var clean = require('gulp-clean');
 
+// abre um webserver para rodar a aplicação
 gulp.task('webserver', function() {
   gulp.src('./')
     .pipe(webserver({
@@ -15,7 +14,8 @@ gulp.task('webserver', function() {
     }));
 });
 
-gulp.task('temp-project', function (){
+// cria uma pasta dist com todo o projeto ja minificado para uso
+gulp.task('dist-project', function (){
     gulp.src('./app/*.js')
           .pipe(uglify())
           .pipe(gulp.dest('./dist/app'));
@@ -31,6 +31,8 @@ gulp.task('temp-project', function (){
     gulp.src('./assets/img/*.png')
           .pipe(gulp.dest('./dist/assets/img/'));
 
+    gulp.src('./assets/js/')
+          .pipe(gulp.dest('./dist/assets/js'));
 
     gulp.src('./components/views/lista-items/*.html')
           .pipe(gulp.dest('./dist/components/views/lista-items'));
@@ -48,13 +50,14 @@ gulp.task('temp-project', function (){
 
     gulp.src('./dados/*')
           .pipe(gulp.dest('./dist/dados/'));
+
     gulp.src('./index.html')
           .pipe(gulp.dest('./dist'));
 
     gulp.src('./package.json')
           .pipe(gulp.dest('./dist/'));
 
-
 });
 
-gulp.task('default', ['temp-project', 'webserver']);
+// task que inicializa as task do gulp
+gulp.task('default', ['dist-project', 'webserver']);

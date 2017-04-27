@@ -1,5 +1,6 @@
+/*folha de estilo para toda aplicação*/
+
 body {
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height:100%;
@@ -13,28 +14,33 @@ input::-webkit-input-placeholder {
   font-weight: bold !important;
   font-size: 12px;
 }
+
 .pesquisa-grid input::-webkit-input-placeholder{
   font-size: 14px;
 }
 
 .corpo-login{
-    height: 100%;
-    width: 100%;
-    background-color: #442044;
+  height: 100%;
+  width: 100%;
+  background-color: #442044;
 }
+
 .toolbar-login{
   min-height: 40px;
   max-height: 40px;
 }
+
 .toolbar-login h6{
   margin: 10px 0px 0px 20px;
 }
+
 .toolbar-login md-icon{
   margin-top: 10px;
   margin-right: 40px;
   font-size: 20px;
   cursor:pointer;
 }
+
 .toolbar-login div{
   height: 40px
 }
@@ -42,14 +48,17 @@ input::-webkit-input-placeholder {
 .card-login{
   background-color: #f2f2f2 !important;
 }
+
 .card-login md-card-content{
   padding-top: 0px
 }
+
 .input-login{
   height: 36px !important;
   margin-top: 20px;
   margin-bottom: 0px;
 }
+
 .input-login .md-input{
   position: absolute;
   height: 36px !important;
@@ -58,17 +67,19 @@ input::-webkit-input-placeholder {
   padding-left: 20px;
   max-width: 100%;
 }
+
 .input-login.md-input-invalid .md-input{
   border: 1px solid red !important;
 }
+
 .lost-pass{
   margin-left: 20px;
   font-size: 12px;
   color: #a1a1a1;
   cursor: pointer;
   font-weight: bold;
-
 }
+
 .btn-login{
   background-color: #6d496d !important;
   text-transform: none;
@@ -78,44 +89,61 @@ input::-webkit-input-placeholder {
   width: 120px;
   height: 30px
 }
+
 .div-btn-lost-login{
   margin-top: 20px;
 }
+
 .icons-login{
   margin-top: 2px !important;
   margin-right: 10px !important;
   color: #a1a1a1;
   font-size: 18px
 }
+
 .invalid-msg{
   color: red;
   font-size: 10px
 }
+
 .container-lista{
   height: 100%;
   overflow: hidden;
 }
+
+.toolbar-grid{
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14),
+   0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+}
+
 .toolbar-grid h4{
   margin: 0px;
   margin-left: 30px;
   text-align: start;
 }
+
 .toolbar-grid h6, .toolbar-grid md-icon{
   margin: 0px;
   cursor: pointer;
   outline: inherit;
 }
+.toolbar-grid md-icon{
+  margin-right: 10px;
+}
 .toolbar-grid h6{
   text-align: right;
   margin-right: 10px;
 }
+
 .container-lista md-toolbar{
-    min-height: 45px !important;
-    max-height: 45px !important;
+  min-height: 45px !important;
+  max-height: 45px !important;
 }
+
 .container-lista md-content{
   height: 100%;
 }
+
 .grid-lista{
   height: 100%;
   padding: 0px 40px 100px 40px;
@@ -133,66 +161,86 @@ input::-webkit-input-placeholder {
   padding-left: 40px;
   height: 100%;
 }
+
 .pesquisa-grid md-icon{
   position: absolute;
   left: 45px;
 }
+
 .menu-filtro{
   background-color: #fff;
   z-index: 1;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
   font-size: 12px;
 }
+
 .img-grid:hover{
   transform: scale(1.2,1.2);
   transition: 0.8s;
   z-index: 3;
-
 }
+
 .img-grid:not(:hover){
   transform: scale(1,1);
   transition: 0.8s;
 }
+
 .btn-esconder{
   margin: 0;
-  background-color: #ccc;
+  background-color: rgb(110,73,114);
   position: relative;
   min-width: 40px;
   top: 10px;
   right: 43px;
 }
+.btn-esconder md-icon{
+  color:#fff;
+}
+
 .div-pesquisa {
   margin-bottom: 20px
 }
+
 .div-pesquisa md-input-container{
   margin-top: 0px;
 }
+
 .btn-esconder:hover{
-  background-color: #ccc !important;
+  background-color: rgb(110,73,114) !important;
 }
+
 ul {
   width: 100%;
   list-style-type: none;
 }
+
 .menu-filtro ul{
   padding-bottom: 100px;
   position: absolute;
   top: 55px
 }
+
 md-checkbox.md-default-theme.md-checked ._md-icon, md-checkbox.md-checked ._md-icon {
   background-color: #ccc !important
 }
+
 .grid md-grid-tile-footer{
   z-index: 1;
   height: 80px;
+}
+.grid img{
+  width:100%;
+  height:100%
 }
 .grid h4, .grid h5{
   margin: 0;
   margin-bottom: 5px
 }
+
 .menu-filtro md-select{
   padding: 10px
 }
+
 .menu-filtro md-select md-select-value{
   border: 1px solid lightgrey;
   border-radius: 5px;

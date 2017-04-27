@@ -18,3 +18,4 @@
 
     -Para logar basta digitar um login e senha qualquer
     -O git ignora a pasta node_modules e a pasta dist(nela tem uma copia do projeto minificado, feito com o gulp)
+    -Existe uma pasta com imagens que são usadas no grid

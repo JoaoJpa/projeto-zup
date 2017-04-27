@@ -1,34 +1,46 @@
 <div class="corpo-login" layout="row" layout-align="center center">
-  <md-card  flex=35 flex-lg=35 flex-xs="100" flex-sm="60"class="card-login">
-    <md-toolbar class="toolbar-login">
-    <div layout="row">
-      <h6 flex=90>Login Form</h6>
-      <md-icon ng-click="limpar()"flex>
-        <md-tooltip>limpar form</md-tooltip>
-        close</md-icon>
-    </div>
 
+  <!-- card com input de logins -->
+  <md-card  flex=35 flex-lg=35 flex-xs="100" flex-sm="60"class="card-login">
+
+    <!-- toolbar do card de login -->
+    <md-toolbar class="toolbar-login">
+      <div layout="row">
+        <h6 flex=90>Login Form</h6>
+        <md-icon ng-click="limpar()"flex>
+          <md-tooltip>limpar form</md-tooltip>
+          close</md-icon>
+      </div>
     </md-toolbar>
+
+    <!-- conteudo do carde de login -->
     <md-card-content>
         <div class="row" flex=100 >
+          <!-- form para validação de dados -->
           <form name="formLogin">
             <md-input-container md-no-float class="md-block input-login" flex=100>
               <input type="text" name="username" ng-model="user" placeholder="Username"required>
               <md-icon class="icons-login">person</md-icon>
            </md-input-container>
+
+           <!-- caso tentar logar sem usuario preenchido mostra a msg  -->
            <div ng-messages="formLogin.username.$error" ng-show="invalidUser">
              <div ng-message="required" class="invalid-msg">Username is required.</div>
            </div>
+
            <md-input-container md-no-float class="md-block input-login" flex=100>
              <input type="password"name="pass" ng-model="password" placeholder="Password"required>
              <md-icon class="icons-login">lock</md-icon>
            </md-input-container>
-            <div ng-messages="formLogin.pass.$error" ng-show="invalidPass">
-              <div ng-message="required" class="invalid-msg">Password is required.</div>
-            </div>
-          </form>
+           <!-- caso tentar logar sem usuario preenchido mostra a msg  -->
 
+           <div ng-messages="formLogin.pass.$error" ng-show="invalidPass">
+             <div ng-message="required" class="invalid-msg">Password is required.</div>
+           </div>
+          </form>
         </div>
+
+        <!-- botão para login -->
         <div class="row div-btn-lost-login">
           <md-button class="btn-login" ng-click="login()">
             <md-tooltip>sing in</md-tooltip>
@@ -37,6 +49,5 @@
           <span class="lost-pass">Lost Your Password ?</span>
         </div>
     </md-card-content>
-
   <md-card>
 </div>

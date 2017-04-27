@@ -2,7 +2,7 @@
 
   git clone https://github.com/JoaoJpa/projeto-zup.git
 
-#Install npm modules e start
+# Install npm modules e start
 
   npm install && npm start
 
@@ -14,8 +14,7 @@
 
    O codigo possui comentario
 
-#Obs
-
-    -Para logar basta digitar um login e senha qualquer
-    -O git ignora a pasta node_modules e a pasta dist(nela tem uma copia do projeto minificado, feito com o gulp)
-    -Existe uma pasta com imagens que são usadas no grid
+# Obs
+   -Para logar basta digitar um login e senha qualquer
+   -O git ignora a pasta node_modules e a pasta dist(nela tem uma copia do projeto minificado, feito com o gulp)
+   -Existe uma pasta com imagens que são usadas no grid
